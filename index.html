@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitud de Aplicación</title>
+  <!-- Bootstrap CSS -->
+  <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- SweetAlert2 (para mensajes) -->
+  <script src="resources/js/sweetalert2@11.js"></script>
+</head>
+<body class="bg-light">
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Laboratorio IV - Desarrollo Web I</a>
+    </div>
+  </nav>
+
+  <!-- Encabezado -->
+  <header class="bg-primary text-white text-center py-4 shadow-sm">
+    <h1 class="display-5">Solicitud de Aplicación</h1>
+    <p class="lead">Complete el formulario para enviar su aplicación</p>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="container my-5">
+    <div class="card mx-auto shadow-lg" style="max-width: 700px;">
+      <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Formulario de Aplicación</h4>
+      </div>
+      <div class="card-body">
+        <form id="formAplicacion" autocomplete="off">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre completo" required />
+          </div>
+
+          <!-- Ajuste responsivo para tablets y móviles -->
+          <div class="row g-3">
+            <div class="col-sm-12 col-md-6">
+              <label for="edad" class="form-label">Edad</label>
+              <input type="number" class="form-control" id="edad" min="0" placeholder="Edad en años" required />
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label for="sueldo" class="form-label">Sueldo pretendido</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" step="0.01" class="form-control" id="sueldo" min="0" placeholder="Monto en dólares" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 text-center">
+            <button type="submit" id="btnProcesar" class="btn btn-success btn-lg px-5">
+              Procesar Aplicación
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2026 Laboratorio IV - Los gatos mandan</p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="resources/js/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="resources/js/bootstrap.min.js"></script>
+  <!-- Script de controlador AJAX -->
+  <script src="./apps/controller/index.js"></script>
+</body>
+</html>
